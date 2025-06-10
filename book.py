@@ -14,3 +14,5 @@ class Book:
         """A list of all the books that the library owns in which keys are isbn and value the book object"""
         data.inventory[isbn] = self
 
+        def __str__(self):
+            return 'Book with isbn: {self.isbn}'

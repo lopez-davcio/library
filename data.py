@@ -1,4 +1,4 @@
-import utils
+
 
 """
 A  module serving as a database to save all the information from execution to execution
@@ -64,29 +64,5 @@ library_users = [
 ]
 
 
-
-def load_books():
-    pass
-   
-
-
-
-def load_users():
-    pass
-   
-
-
-def load_mock_transactions():
-    utils.lend_book(52987, 261)
-    utils.lend_book(40182, 401)
-    utils.lend_book(40182, 397)
-    utils.lend_book(87319, 401)
-    utils.return_book(87319, 401)
-    utils.return_book(40182, 401)
-    utils.lend_book(87319, 397)
-    utils.lend_book(40182, 261)
-    utils.return_book(52987, 261)
-    utils.lend_book(52987, 401)
-    utils.return_book(40182, 261)
 
     
