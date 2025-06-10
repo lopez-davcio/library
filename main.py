@@ -1,4 +1,5 @@
 from book import Book
+from user import User
 import utils
 import data
 
@@ -18,7 +19,12 @@ def load_books():
 load_books()        
 print(data.inventory.keys())   
 def load_users():
-    pass
+    for user in data.library_users:
+        number = user[0]
+        name = user[1]
+        User(number, name)
+load_users()
+print(data.users.keys())
 
 """    
 def load_mock_transactions():

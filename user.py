@@ -12,6 +12,9 @@ class User:
         """Books that the user borrowed in the past"""
         self.past_books = dict()
 
+        """Add User instance to users dictionary"""
+        data.users[self.user_number] = self
+
         
 
     def __str__(self):
