@@ -26,6 +26,7 @@ def add_new_book():
     print("Please add the book's author:")
     author = input()
     Book(isbn, title, author)
+    print(f'Book {title} has been added')
 
 
 
@@ -38,11 +39,12 @@ def add_new_user():
             continue
         else:
             break
-    print(f'The assigned user number is {user_number}.') 
+    print(f'The assigned user number of the new user is {user_number}.') 
     print('Please add the user name:')
     user_name = input()
+    user_name = user_name.upper()
     User(user_number, user_name)      
-    
+    print(f'User {user_name} has been added')
 
             
 def lend_book(book_isbn, user_number):
