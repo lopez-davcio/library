@@ -31,11 +31,7 @@ print(data.users.keys())
 """
 Load inventory_database and user_database at program initiation
 """
-
-
 data.load_inventory_users()
-print(data.inventory)
-print(data.users)
 
 
 """

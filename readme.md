@@ -6,9 +6,9 @@
 6. **Future Improvements** – Areas you plan to refine.
 
 
-#Project Overview
+# Project Overview
 
-#Motivation
+# Motivation
 After studying the module "Introduction to Python" at university, going through the book "Python crash course" by Eric Matthes, learnt through practical tutorials Virtual Studio Code and Git technology together with Gitlab, I want to put in practice concepts like:
 -   Object-oriented programming: classes, inheritance, and subclasses  
 -   Modular code organization using files, modules, and imports  
@@ -18,11 +18,11 @@ After studying the module "Introduction to Python" at university, going through 
 -   Git configuration and basic usage like branches, merging, commiting and pushing.
 
 
-#Installation & Usage
+# Installation & Usage
 
 
 
-#Design Decisions & Thought Process
+# Design Decisions & Thought Process
 ## The initial layout consists of:
 - Classes Book and User, that will be held in their homonym modules, with the purpose of instantiating the object and send it to module data to be stored/saved.
 - Module utils to represent the functions and logic of the library operations, such as lend/borrow book, return book, etc.
@@ -32,10 +32,10 @@ After studying the module "Introduction to Python" at university, going through 
 The program will be preloaded with mock transactions, books and users to simulate a normal library workflow from the first interaction.
 
 
-#Challenges & Solutions
+# Challenges & Solutions
 **Issue:** Python objects (like instances of a class) can't be directly saved into JSON.  
     **Solution:** There are two main solutions, the first is to manually or through the special attribute __dict__ convert the object into a dictionary and save it, then retrieve it and convert it back into an object. More elaborated and subject to unnecessary conversions. 
     A simpler solution, more in line with the spirit and scope of the current project is to save the data as dictionaries directly instead of objects. 
 
-#Future Improvements
+# Future Improvements
 

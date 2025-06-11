@@ -1,15 +1,30 @@
 from book import Book
 from user import User
 import data
+
 """A module for the logic of the library's operations"""
 
 
 
 def add_new_book():
-    """
-    Ask input from user, book title author and isbn, checks that the isbn is a 5 digit number and instantiate a book
-    """
-    pass
+    """Ask input from user, book title author and isbn, checks that the isbn is a 5 digit number and add new book to inventory"""
+    print('Please add a 5 digit isbn:')
+    while True:
+        isbn = input()
+        if len(isbn) == 5:
+            try:
+                isbn = int(isbn)
+                break
+            except ValueError:
+                print('The isbn must be a 5 digit number, please try again:')
+        else:
+            print('The isbn must be a 5 digit number, please try again:')
+            continue
+    print("Please add the book's title:")
+    title = input()
+    print("Please add the book's author:")
+    author = input()
+    Book(isbn, title, author)
 
 
 
