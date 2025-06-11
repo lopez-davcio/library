@@ -7,15 +7,9 @@ class User:
         self.user_number = user_number
         self.user_name = user_name
        
-        """Books that the user currently holds"""
-        self.current_book = dict()
-        """Books that the user borrowed in the past"""
-        self.past_books = dict()
-
-        """Add User instance to users dictionary"""
-        data.users[self.user_number] = self
+        """Add user to users dictionary"""
+        data.users[self.user_number] = {'user_number':user_number, 'user_name':user_name, 'current_books':[], 'past_books':[]}
 
         
 
-    def __str__(self):
-        pass
+    

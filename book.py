@@ -8,11 +8,8 @@ class Book:
         self.name = name
         self.author = author
 
-        self.current_user = 'library'
-        self.past_users = dict()
-        
-        """A list of all the books that the library owns in which keys are isbn and value the book object"""
-        data.inventory[isbn] = self
+            
+        """Add book to inventory dictionary"""
+        data.inventory[isbn] = {'isbn':self.isbn, 'name':self.name, 'author':self.author, 'current_user': 'library', 'past_users': []}
 
-        def __str__(self):
-            return 'Book with isbn: {self.isbn}'
+        
