@@ -33,7 +33,6 @@ Load inventory_database and user_database at program initiation
 """
 data.load_inventory_users()
 
-
 """
 Save inventory in inventory_database and users in user_database
 

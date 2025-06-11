@@ -1,6 +1,7 @@
 from book import Book
 from user import User
 import data
+import random
 
 """A module for the logic of the library's operations"""
 
@@ -30,10 +31,20 @@ def add_new_book():
 
 def add_new_user():
     """Takes the user name as input, generates a random user number, checks that it's not in use, and instantiate a user object"""
+    while True:
+        user_number = random.randint(100,999)
+        user_number = str(user_number)
+        if user_number in data.users.keys():
+            continue
+        else:
+            break
+    print(f'The assigned user number is {user_number}.') 
+    print('Please add the user name:')
+    user_name = input()
+    User(user_number, user_name)      
     
-    
+
             
-    
 def lend_book(book_isbn, user_number):
     """
     Lends a book to a user, checks that it's in stock and assigns the user to be the borrower in both book and user objects    
