@@ -67,13 +67,26 @@ def lend_book(book_isbn, user_number):
 
     
 
-def return_book():
+def return_book(book_isbn, user_number):
     """
     Returns the book to the library, checks if the system recognises that user as the original borrower, assigns library as current borrower,
     adds the user as past borrowers of the book, adds the book as past books borrowed by the user and deletes the book from current books of user.
     """
-    pass
-   
+    if book_isbn in data.inventory.keys(): 
+        if data.inventory[book_isbn]['current_user'] == user_number:
+            data.inventory[book_isbn]['current_user'] = 'library'
+            data.inventory[book_isbn]['past_users'].append(user_number)
+            data.users[user_number]['past_books'].append(book_isbn)
+
+            try:
+                data.users[user_number]['current_books'].remove(book_isbn)
+            except:
+                print('That isbn was not in the list of books borrowed by the user, please investigate further.')            
+
+        else:
+            print(f'The system does not recognize user {user_number} as the current borrower of book {book_isbn}.')
+    else:
+        print(f"The library does not own the book with isbn: {book_isbn}.")
 
 
 
