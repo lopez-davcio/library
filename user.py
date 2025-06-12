@@ -8,7 +8,7 @@ class User:
         self.user_name = user_name
        
         """Add user to users dictionary"""
-        data.users[self.user_number] = {'user_number':user_number, 'user_name':user_name, 'current_books':[], 'past_books':[]}
+        data.users[str(user_number)] = {'user_number':user_number, 'user_name':user_name, 'current_books':[], 'past_books':[]}
 
         
 

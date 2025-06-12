@@ -10,6 +10,6 @@ class Book:
 
             
         """Add book to inventory dictionary"""
-        data.inventory[isbn] = {'isbn':self.isbn, 'name':self.name, 'author':self.author, 'current_user': 'library', 'past_users': []}
+        data.inventory[str(isbn)] = {'isbn':self.isbn, 'name':self.name, 'author':self.author, 'current_user': 'library', 'past_users': []}
 
         
