@@ -37,11 +37,16 @@ while True:
         utils.add_new_book()
     elif choice == '2':
         print('You chose: Add new user.')
-        utils.add_new_user()
+        utils.add_new_user()    
+    elif choice == '3':
+        print('You chose: Lend book.')
+        utils.lend_book()
+    elif choice == '4':
+        print('You chose: Return book.')
+        utils.return_book()
     elif choice.lower() == 'q':
         data.save_inventory_users()
         break
-    
 
     
     
