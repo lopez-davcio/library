@@ -21,6 +21,7 @@ def add_new_book():
         else:
             print('The isbn must be a 5 digit number, please try again:')
             continue
+    isbn = str(isbn)
     print("Please add the book's title:")
     title = input()
     print("Please add the book's author:")
@@ -46,23 +47,46 @@ def add_new_user():
     User(user_number, user_name)      
     print(f'User {user_name} has been added')
 
-            
+           
 def lend_book(book_isbn, user_number):
     """
-    Lends a book to a user, checks that it's in stock and assigns the user to be the borrower in both book and user objects    
+    Check that book is owned by the library and that the user is registered in the library. Then lends the book to the user, assigns the user as current_user in that book entry and the book as current_book in the user entry.    
     """
-    pass
+    if book_isbn in data.inventory.keys():        
+        if user_number in data.users.keys():
+            if data.inventory[book_isbn]['current_user'] == 'library':
+                data.inventory[book_isbn]['current_user'] = str(user_number)
+                data.users[user_number]['current_books'].append(book_isbn)
+            else:
+                print(f'Book {book_isbn} is not available.')
+        else:
+            print(f'The user number {user_number} is not registered in the library.')
+    else:
+        print(f"The library does not own the book with isbn: {book_isbn}.")
        
 
     
 
-def return_book():
+def return_book(book_isbn, user_number):
     """
     Returns the book to the library, checks if the system recognises that user as the original borrower, assigns library as current borrower,
     adds the user as past borrowers of the book, adds the book as past books borrowed by the user and deletes the book from current books of user.
     """
-    pass
-   
+    if book_isbn in data.inventory.keys(): 
+        if data.inventory[book_isbn]['current_user'] == user_number:
+            data.inventory[book_isbn]['current_user'] = 'library'
+            data.inventory[book_isbn]['past_users'].append(user_number)
+            data.users[user_number]['past_books'].append(book_isbn)
+
+            try:
+                data.users[user_number]['current_books'].remove(book_isbn)
+            except:
+                print('That isbn was not in the list of books borrowed by the user, please investigate further.')            
+
+        else:
+            print(f'The system does not recognize user {user_number} as the current borrower of book {book_isbn}.')
+    else:
+        print(f"The library does not own the book with isbn: {book_isbn}.")
 
 
 
