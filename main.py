@@ -44,10 +44,28 @@ while True:
     elif choice == '4':
         print('You chose: Return book.')
         utils.return_book()
+    if choice == '5':
+        print('You chose: Display all library users.')
+        utils.display_users()
+    elif choice == '6':
+        print('You chose: Display full inventory.')
+        utils.display_inventory()    
+    elif choice == '7':
+        print('You chose: Display available books.')
+        utils.display_available_books()
+    elif choice == '8':
+        print('You chose: Display book location.')
+        utils.display_book_location()
+    
     elif choice.lower() == 'q':
         data.save_inventory_users()
         break
-
+    print("\nPress 'q' to quit or any key to continue:")
+    choice = input().lower()
+    if choice == 'q':
+        break
+    else:
+        continue
     
     
 

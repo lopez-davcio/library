@@ -99,21 +99,31 @@ def return_book():
     
 
 def display_users():
-    pass
-        
+    for each in data.users.items():        
+        print(f'User number: {each[1]['user_number']}, user name: {each[1]['user_name']}.')         
 
 
 def display_inventory():
-    pass
+    for each in data.inventory.items():        
+        print(f'Book isbn: {each[1]['isbn']}, book name: {each[1]['name'].title()}, current_user: {each[1]['current_user']}')
+    
 
 
 
 def display_available_books():
-    pass
+    for each in data.inventory.items():
+        if each[1]['current_user'] == 'library':
+            print(f'Book isbn: {each[1]['isbn']}, book name: {each[1]['name'].title()}, current_user: {each[1]['current_user']}')
 
 
 def display_book_location():
-    pass
+    print('Please add the book isbn:')
+    book_isbn = input()
+    if book_isbn in data.inventory.keys():
+        print(f'The book with isbn: {book_isbn} is currently held by: {data.inventory[book_isbn]['current_user']}')
+    else:
+        print(f"The library does not own the book with isbn: {book_isbn}.")
+
 
 
 
