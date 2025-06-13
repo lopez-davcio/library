@@ -4,7 +4,8 @@
 4. **Design Decisions & Thought Process** – *This is where you’d explain your reasoning.*
 5. **Challenges & Solutions** – Document issues you encountered and how you resolved them.
 6. **Key learnings** - Highlight the most valuable insights and skills gained during the project.
-7. **Future Improvements** – Areas you plan to refine.
+7. **Testing**
+8. **Future Improvements** – Areas you plan to refine.
 
 
 # Project Overview
@@ -53,8 +54,12 @@ JSON and Python Objects: One of the main goals was to practice working with obje
 Initially, the intent was to save Book and User objects directly in JSON format. This proved unfeasible, leading to the decision to store the object data as dictionaries instead.
 This experience reinforced the importance of understanding data serialization and the limitations of different storage formats.
  
-The importance of try excepts blocks to avoid crashes.'
+The importance of testing.
+The importance of factoring or functional code?
 
+# Testing
+The best approach for testing this project, and the initial intention was, to use the pytest library. However, the functions of this project might not be good candidates for that, they would probably need to be refactored to be testable.
+Instead, I use a manual approach. Comprehensively outlining all the possible scenarios and the expected outcomes in a separate file called testing.md.
 
 # Future Improvements
-
+more functional code

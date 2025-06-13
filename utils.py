@@ -97,22 +97,26 @@ def return_book():
     
 
 def display_users():
+    """Display the user number and name of all the users of the library"""
     for each in data.users.items():        
         print(f'User number: {each[1]['user_number']}, user name: {each[1]['user_name']}.')         
 
 
 def display_inventory():
+    """Display the isbn, the name and the current user of all books of the library"""
     for each in data.inventory.items():        
         print(f'Book isbn: {each[1]['isbn']}, book name: {each[1]['name'].title()}, current_user: {each[1]['current_user']}')
     
 
 def display_available_books():
+    """Display the isbn, the name and the current holder, library, of all books currently available of the library"""
     for each in data.inventory.items():
         if each[1]['current_user'] == 'library':
-            print(f'Book isbn: {each[1]['isbn']}, book name: {each[1]['name'].title()}, current_user: {each[1]['current_user']}')
+            print(f'Book isbn: {each[1]['isbn']}, book name: {each[1]['name'].title()}, current holder user: {each[1]['current_user']}')
 
 
 def display_book_location():
+    """Display the book isbn and its current holder"""
     print('Please add the book isbn:')
     book_isbn = input()
     if book_isbn in data.inventory.keys():
@@ -122,6 +126,7 @@ def display_book_location():
 
 
 def display_book_info():
+    """Display all information of a book"""
     print('Please add the book isbn:')
     book_isbn = input()
     if book_isbn in data.inventory.keys():
@@ -133,6 +138,7 @@ def display_book_info():
     
 
 def display_user_current_book():
+    """Display books currently held by a user"""
     print('Please add the user number:')
     user_number = input()
     if user_number in data.users.keys():
