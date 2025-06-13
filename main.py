@@ -18,8 +18,7 @@ Select an option:
 7.  Display available books
 8.  Display book location
 9.  Display book info
-10. Display book past borrowers
-11. Display user's current book
+10. Display user's current book
 Q. Quit
 """
 
@@ -56,7 +55,12 @@ while True:
     elif choice == '8':
         print('You chose: Display book location.')
         utils.display_book_location()
-    
+    elif choice == '9':
+        print('You chose: Display book info.')
+        utils.display_book_info()    
+    elif choice == '10':
+        print("You chose: Display user's current book.")
+        utils.display_user_current_book()        
     elif choice.lower() == 'q':
         data.save_inventory_users()
         break

@@ -30,7 +30,6 @@ def add_new_book():
     print(f'Book {title} has been added')
 
 
-
 def add_new_user():
     """Takes the user name as input, generates a random user number, checks that it's not in use, and instantiate a user object"""
     while True:
@@ -69,8 +68,7 @@ def lend_book():
     else:
         print(f"The library does not own the book with isbn: {book_isbn}.")
     
-
-    
+  
 
 def return_book():
     """
@@ -108,8 +106,6 @@ def display_inventory():
         print(f'Book isbn: {each[1]['isbn']}, book name: {each[1]['name'].title()}, current_user: {each[1]['current_user']}')
     
 
-
-
 def display_available_books():
     for each in data.inventory.items():
         if each[1]['current_user'] == 'library':
@@ -125,16 +121,26 @@ def display_book_location():
         print(f"The library does not own the book with isbn: {book_isbn}.")
 
 
-
-
 def display_book_info():
-    pass
+    print('Please add the book isbn:')
+    book_isbn = input()
+    if book_isbn in data.inventory.keys():
+        print(f'Book isbn: {book_isbn} \nName: {data.inventory[book_isbn]['name']} \nCurrently held by: {data.inventory[book_isbn]['current_user']} \nPast users: ')
+        for each in data.inventory[book_isbn]['past_users']:
+            print(each)
+    else:
+        print(f"The library does not own the book with isbn: {book_isbn}.")
     
 
-def display_book_past_borrowers():
-    pass
-
-
-
 def display_user_current_book():
-    pass
+    print('Please add the user number:')
+    user_number = input()
+    if user_number in data.users.keys():
+        print(f'The user number {user_number} is currently holding books:')
+        if data.users[user_number]['current_books']:
+            for book in data.users[user_number]['current_books']:
+                print(f'Isbn: {book}')
+        else:
+            print('None')
+    else:
+        print(f'The user number {user_number} is not registered in the library.')
